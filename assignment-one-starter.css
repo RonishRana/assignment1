@@ -1,53 +1,84 @@
-/* Mobile 768px */
-@media only screen and (max-width: 768px) {
+/* assignment_one.css */
+
+/* Mobile (max-width: 768px): 1 × 9 (full width cards) */
+@media screen and (max-width: 768px) {
   .card-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
   }
-  
+
   .card {
-    width: calc(100% - 20px);
-    margin: 10px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .card img {
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Ensure the image aspect ratio is maintained */
+    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+    border-radius: 0.25rem; /* Preserve border radius */
   }
 }
- 
-/* Tablet 768px */
-@media only screen and (min-width: 768px) {
+
+/* Tablet (min-width: 768px): 2 × 4 (50% width cards, last card is full width) */
+@media screen and (min-width: 768px) and (max-height: 768px) {
   .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
   }
-  
-  .card {
-    width: calc(50% - 20px);
-    margin-bottom: 20px;
+
+  .card img {
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Ensure the image aspect ratio is maintained */
+    object-fit: cover; /* Ensure the image covers its entire container */
+    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+    border-radius: 0.25rem; /* Preserve border radius */
   }
- 
-  .card:last-child {
-    width: calc(100% - 20px);
+
+  .card:nth-last-child(1) {
+    grid-column: 1 / -1;
   }
 }
- 
-/* Desktop 1200px */
-@media only screen and (min-width: 1200px) {
+
+/* Tablet (min-width: 768px): 2 × 4 (50% width cards, last card is full width) */
+@media screen and (min-width: 768px) and (min-height: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .card img {
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Ensure the image aspect ratio is maintained */
+    object-fit: cover; /* Ensure the image covers its entire container */
+    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+    border-radius: 0.25rem; /* Preserve border radius */
+  }
+
+  .card:nth-last-child(1) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop (min-width: 1200px): 3 × 3 (33% width cards) */
+@media screen and (min-width: 1200px) {
   .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 1rem;
   }
-  
-  .card {
-    width: calc(33.33% - 20px);
-  }
- 
+
   .card img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Ensure the image aspect ratio is maintained */
+    object-fit: cover; /* Ensure the image covers its entire container */
+    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+    border-radius: 0.25rem; /* Preserve border radius */
   }
- 
-  .card:last-child {
-    width: calc(86.5% - 20px);
+
+  .card:nth-last-child(1) {
+    grid-column: 1 / -1;
   }
 }
